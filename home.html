@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duelim | Close the Authority Gap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif-thin {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+        .sales-letter-flow p {
+            margin-bottom: 1.75rem; /* 28px */
+            font-size: 1.125rem; /* 18px */
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300 antialiased">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-10">
+        <nav class="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-serif-thin tracking-wider text-white">DUELIM</a>
+            </div>
+            <div class="flex items-center space-x-8">
+                <a href="#" class="text-sm font-medium text-white">Home</a>
+                <a href="#" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">Services</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Main Content Container -->
+    <main class="max-w-3xl mx-auto px-6 pt-48 pb-24 sm:pt-56 sm:pb-32">
+
+        <!-- Header/Problem Framing -->
+        <div class="text-center mb-24">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
+                Don't lose your next client to a search box.
+            </h1>
+            <p class="text-xl text-gray-400">
+                They are using AI to find answers. Shouldn't those come from you?
+            </p>
+        </div>
+
+        <!-- Sales Letter Flow -->
+        <div class="sales-letter-flow text-left">
+            <p>
+                The client journey used to be straightforward. A problem would arise, they would seek out the most trusted name, and a relationship would begin. That path has been washed away.
+            </p>
+
+            <p>
+                Today, the journey starts with a question typed into a machine. An AI chatbot now serves as the first "consultation" for millions, providing instant, confident, and "good enough" answers that commoditize your foundational expertise. 
+            </p>
+            
+            <p>
+                This has created an <strong class="text-white font-semibold">Authority Gap</strong>—a dangerous space between a generic AI answer and the specific, expert advice a client truly needs. When your firm's verifiable wisdom is invisible to these new gatekeepers, you don't just lose a lead. You lose your position as the definitive source of truth.
+            </p>
+
+            <p>
+                Surviving this shift isn't about better marketing. It's about better architecture. It requires a deliberate, strategic system to make your expertise legible to the machines that now shape your market's first point of contact. It requires making your authority a verifiable fact.
+            </p>
+        </div>
+
+        <!-- CTA Section - "Below the Fold" -->
+        <div class="text-center border-t border-gray-700/50 mt-24 pt-24">
+            <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Reclaim Your Position</h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                The first step is to understand the depth of the disruption. Our playbook provides the definitive strategy for professional service firms to close the Authority Gap and turn AI into an asset, not an adversary.
+            </p>
+            <button id="downloadBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-lg py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+                Download "The Authority Gap" Playbook
+            </button>
+        </div>
+
+
+        <!-- Author Card Section -->
+        <div class="mt-32">
+             <div class="bg-gray-800/70 p-8 rounded-2xl ring-1 ring-white/10">
+                <div class="flex flex-col sm:flex-row items-center text-center sm:text-left">
+                    <img class="w-24 h-24 rounded-full mr-0 sm:mr-8 mb-4 sm:mb-0 object-cover ring-2 ring-gray-600" src="https://placehold.co/100x100/374151/E5E7EB?text=CD" alt="Christopher G. Davis">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Christopher G. Davis</h3>
+                        <p class="text-indigo-400 mb-3">Founder, Duelim</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Christopher is a technical business leader and ex-founder with a decade of experience operating at the intersection of data, finance, and strategy. With a unique background that combines a B.S. in Accounting with deep expertise in data architecture, he is singularly positioned to address the structural challenges firms face in the age of AI. He focuses on building scalable operating models that provide firms with the technical and strategic leverage needed to establish and maintain digital authority.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal for Download Confirmation -->
+    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-8 max-w-sm text-center ring-1 ring-white/10">
+            <h3 class="text-xl font-bold text-white mb-4">Thank You!</h3>
+            <p class="text-gray-400 mb-6">The playbook is on its way to your inbox.</p>
+            <button id="closeModalBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-6 rounded-lg">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Modal script
+        const downloadBtn = document.getElementById('downloadBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modal = document.getElementById('modal');
+
+        downloadBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        // Close modal if clicking outside of it
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
